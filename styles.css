@@ -1,4 +1,4 @@
-/* CPPEM — Desafio "Operação A Farda é Minha" (5 dias de lives)
+/* CPPEM · Desafio "Operação A Farda é Minha" (5 dias de lives)
    topbar > logo > headline > VSL > contagem > CTA > cronograma > mentor > provas > FAQ
    Rebranding: VERMELHO + PRETO + BRANCO · botões sempre VERDES */
 
@@ -41,7 +41,7 @@ img{display:block;max-width:100%}
 .topbar strong{color:#FFE0E0}
 @keyframes pulse-red{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
 
-/* container principal — largura única pra todas as seções */
+/* container principal: largura única pra todas as seções */
 .page{max-width:1040px;margin:0 auto;padding:2.2rem 1.3rem 4rem;text-align:center;display:flex;flex-direction:column;align-items:center}
 /* bloco do herói (logo→botão) fica estreito e centralizado dentro do frame */
 .logo,.eyebrow,.headline,.sub,.vsl,.facts,.countdown,.subheadline,.cta-line,.cta{max-width:600px;width:100%;margin-left:auto;margin-right:auto}
@@ -65,7 +65,7 @@ img{display:block;max-width:100%}
 .sub{color:var(--muted);font-size:1.02rem;max-width:34rem;margin-bottom:1.8rem}
 .sub strong{color:var(--white)}
 
-/* 2. VSL — vídeo (16:9 responsivo) */
+/* 2. VSL (vídeo (16:9 responsivo) */
 .vsl{width:100%;max-width:560px;margin:0 auto 1.4rem;
   border-radius:16px;overflow:hidden;position:relative;
   border:1px solid rgba(225,38,38,.4);
@@ -144,7 +144,7 @@ img{display:block;max-width:100%}
 .carousel__item img{width:100%;height:100%;object-fit:cover}
 @keyframes carousel-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(-50% - .5rem),0,0)}}
 
-/* wrap interno das seções largas — segue o frame da página */
+/* wrap interno das seções largas: segue o frame da página */
 .wrap{width:100%;margin:0 auto}
 
 /* selo/pill de seção */
@@ -332,6 +332,7 @@ img{display:block;max-width:100%}
 
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
-  .carousel{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
-  .carousel__track{animation:none}
+  /* O carrossel de alunos continua rodando sozinho, só que mais devagar.
+     Sem isso a regra acima o congelava e virava um scroll manual. */
+  .carousel__track{animation:carousel-scroll 90s linear infinite!important}
 }

@@ -1,5 +1,5 @@
 /* =========================================================
-   CPPEM — Desafio "Operação A Farda é Minha"
+   CPPEM · Desafio "Operação A Farda é Minha"
    Formulário → Google Sheets + GTM + WhatsApp | contagem regressiva
    ========================================================= */
 
@@ -8,7 +8,7 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbxdFplWVSfhTjvyIA7HIW
 /* 👉 Troque pelo link do GRUPO do desafio quando ele existir. */
 const WHATSAPP_REDIRECT = "https://wa.me/5581973105354?text=Quero%20entrar%20no%20Desafio%20Opera%C3%A7%C3%A3o%20A%20Farda%20%C3%A9%20Minha!%20%F0%9F%94%B4%F0%9F%94%A5";
 
-/* Início do Dia 1 — 24/07 às 12h12 (horário de Brasília, UTC-3) */
+/* Início do Dia 1: 24/07 às 12h12 (horário de Brasília, UTC-3) */
 const CHALLENGE_START = new Date("2026-07-24T12:12:00-03:00");
 
 /* --- Elementos --- */
@@ -16,6 +16,7 @@ const form = document.getElementById("lead-form");
 const telefoneInput = document.getElementById("telefone");
 const modal = document.getElementById("lead-modal");
 const openBtn = document.getElementById("open-modal");
+const submitBtn = document.getElementById("IPEyzyfmJhKQEYIXAlZH");
 
 /* --- Popup / Modal --- */
 function openModal() {
@@ -70,7 +71,7 @@ document.addEventListener("keydown", (e) => {
 
     if (diff <= 0) {
       box.classList.add("is-live");
-      if (label) label.textContent = "A operação já começou — entre agora";
+      if (label) label.textContent = "A operação já começou, entre agora";
       ["d", "h", "m", "s"].forEach((k) => els[k] && (els[k].textContent = "00"));
       return;
     }
@@ -136,14 +137,51 @@ function validate() {
   return ok;
 }
 
+/* Limpa o erro assim que a pessoa começa a corrigir o campo. */
+["nome", "email", "telefone"].forEach((id) => {
+  document.getElementById(id)?.addEventListener("input", () => clearError(id));
+});
+
+/* --- Trava do clique no botão de envio ---
+   Fica no WINDOW e na fase de CAPTURA, que é o primeiro ponto do caminho de um
+   clique. Por isso roda antes de qualquer listener de pixel ou tag, inclusive
+   dos que são registrados no próprio botão e dos que carregam depois desta
+   página. Com algum campo faltando o clique morre aqui: não vira envio e não
+   chega em ninguém, então nenhum pixel amarrado ao id do botão conta evento.
+   Só com tudo preenchido o clique segue o caminho normal. */
+window.addEventListener(
+  "click",
+  (e) => {
+    const alvo = e.target instanceof Element ? e.target.closest("button, input") : null;
+
+    // Só interessa o botão de envio do formulário.
+    if (!alvo || (submitBtn ? alvo !== submitBtn : alvo.type !== "submit")) return;
+    if (!form || !form.contains(alvo)) return;
+
+    if (validate()) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    document.querySelector(".is-invalid")?.focus();
+  },
+  true
+);
+
 /* --- Envio --- */
+let isSubmitting = false;
+
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
     if (!validate()) return;
 
-    const btn = form.querySelector("button[type='submit']");
+    isSubmitting = true;
+
+    const btn = submitBtn || form.querySelector("button[type='submit']");
 
     const btnLabel = btn ? btn.textContent : "";
 
@@ -176,7 +214,19 @@ if (form) {
         body: JSON.stringify(payload)
       });
 
-      // 2. Envia o evento de Lead para o dataLayer (Google Tag Manager)
+      // 2. Só agora, com os dados validados e enviados, o lead é contado.
+      //    O eventCallback segura o redirect até a tag do GTM disparar, com
+      //    teto de 1,2s pra ninguém ficar preso caso o GTM não responda.
+      form.reset();
+      closeModal();
+
+      let jaFoi = false;
+      const irParaWhatsApp = () => {
+        if (jaFoi) return;
+        jaFoi = true;
+        window.location.href = WHATSAPP_REDIRECT;
+      };
+
       try {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
@@ -184,22 +234,23 @@ if (form) {
           lead_name: nome,
           lead_email: email,
           lead_phone: telefone,
-          page_url: window.location.href
+          page_url: window.location.href,
+          eventCallback: irParaWhatsApp,
+          eventTimeout: 1200
         });
       } catch (dlError) {
         console.warn("[GTM] Erro ao enviar evento de lead:", dlError);
       }
 
-      // 3. Fecha o popup e redireciona IMEDIATAMENTE (mesma aba)
-      form.reset();
-      closeModal();
-
-      window.location.href = WHATSAPP_REDIRECT;
+      // 3. Rede de segurança: se o GTM não chamar o callback, redireciona igual.
+      setTimeout(irParaWhatsApp, 1200);
 
     } catch (err) {
       console.error("[Form] Erro ao enviar:", err);
 
       setError("telefone", "Erro ao enviar. Tente novamente.");
+
+      isSubmitting = false;
 
       if (btn) {
         btn.disabled = false;
