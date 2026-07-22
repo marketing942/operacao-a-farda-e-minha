@@ -6,7 +6,7 @@
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbxdFplWVSfhTjvyIA7HIWb645xRjGNhBVhTdTf5UMjo0lSpW_A_jCuys0qB4uImKXPQ/exec?aba=FARDA";
 
 /* 👉 Troque pelo link do GRUPO do desafio quando ele existir. */
-const WHATSAPP_REDIRECT = "https://wa.me/5581973105354?text=Quero%20entrar%20no%20Desafio%20Opera%C3%A7%C3%A3o%20A%20Farda%20%C3%A9%20Minha!%20%F0%9F%94%B4%F0%9F%94%A5";
+const WHATSAPP_REDIRECT = "https://chat.whatsapp.com/CBI512TDSYeBlYDjuctQaH?s=cl&p=i&ilr=1&amv=1";
 
 /* Início do Dia 1: 24/07 às 12h12 (horário de Brasília, UTC-3) */
 const CHALLENGE_START = new Date("2026-07-24T12:12:00-03:00");
