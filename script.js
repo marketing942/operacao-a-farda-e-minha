@@ -1,5 +1,5 @@
 /* =========================================================
-   CPPEM · Desafio "Operação A Farda é Minha"
+   CPPEM · "Desafio A Farda é Minha"
    Formulário → Google Sheets + GTM + WhatsApp | contagem regressiva
    ========================================================= */
 
