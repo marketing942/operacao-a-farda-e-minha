@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operação A Farda é Minha — Desafio gratuito de 5 dias | CPPEM Concursos</title>
+  <meta name="description" content="Desafio gratuito de 5 dias para concurseiros da PMPE. De 24 a 28 de julho, ao vivo com o Prof. Everton Mota: descubra como estudar certo e vestir a farda." />
+  <meta property="og:title" content="Operação A Farda é Minha — 5 dias ao vivo e gratuitos para quem vai passar na PMPE." />
+  <meta property="og:description" content="A diferença entre quem passa e quem não passa não é capacidade. É método e decisão. Inscreva-se gratuitamente." />
+  <meta property="og:image" content="/bg-collage.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="public/logo-cppem.png" />
+</head>
+<body>
+
+  <!-- Google Tag Manager (servidor próprio — sgtm.cppem.com.br) -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://sgtm.cppem.com.br/metrics/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PJ379FLQ');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Fundo mesclado (colagem de todas as imagens) -->
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bg-scrim" aria-hidden="true"></div>
+
+  <!-- TOPBAR VERMELHA — escassez -->
+  <div class="topbar" role="alert">
+    🔴 INSCRIÇÕES ABERTAS: o desafio <strong>começa dia 24/07 às 12h12</strong> — as vagas no grupo são limitadas!
+  </div>
+
+  <main class="page">
+
+    <!-- Logo CPPEM -->
+    <img class="logo" src="public/logo-cppem.png" alt="CPPEM Concursos Públicos" />
+
+    <!-- 1. HEADLINE -->
+    <span class="eyebrow">Desafio gratuito · 5 dias ao vivo</span>
+    <h1 class="headline">
+      Operação <span class="hl">A Farda é Minha</span>
+    </h1>
+    <p class="sub">
+      5 dias ao vivo e 100% gratuitos com o Prof. Everton Mota para você entender, de uma vez por todas,
+      <strong>como estudar certo para a PMPE</strong>. Assista ao vídeo abaixo e entre na operação.
+    </p>
+
+    <!-- 2. VSL — VÍDEO DE VENDAS -->
+    <div class="vsl">
+      <div class="vsl__frame">
+        <!--
+          👉 COLOQUE SEU VÍDEO AQUI.
+          Exemplo YouTube:
+          <iframe src="https://www.youtube.com/embed/SEU_ID?rel=0" title="Desafio Operação A Farda é Minha" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          Ou vídeo próprio:
+          <video src="public/vsl.mp4" controls playsinline poster="public/tropa-pmpe.jpeg"></video>
+        -->
+        <div class="vsl__placeholder" id="vsl-placeholder">
+          <div class="vsl__play"></div>
+          <span>Seu vídeo de vendas aqui</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2b. DADOS DO DESAFIO -->
+    <ul class="facts" aria-label="Informações do desafio">
+      <li><b>24 a 28/07</b><span>5 dias de lives</span></li>
+      <li><b>12h12</b><span>Horário de início</span></li>
+      <li><b>Gratuito</b><span>No grupo do WhatsApp</span></li>
+    </ul>
+
+    <!-- 2c. CONTAGEM REGRESSIVA -->
+    <div class="countdown" id="countdown" aria-label="Contagem regressiva para o início do desafio">
+      <span class="countdown__label">A operação começa em</span>
+      <div class="countdown__clock">
+        <div><b id="cd-d">00</b><span>dias</span></div>
+        <div><b id="cd-h">00</b><span>horas</span></div>
+        <div><b id="cd-m">00</b><span>min</span></div>
+        <div><b id="cd-s">00</b><span>seg</span></div>
+      </div>
+    </div>
+
+    <!-- 3. SUBHEADLINE + CTA -->
+    <p class="subheadline">
+      A diferença entre quem passa e quem não passa <span class="g">não é capacidade</span> — é método e decisão.
+    </p>
+    <p class="cta-line">
+      Clique no botão abaixo, garanta sua vaga no grupo e receba todos os avisos das lives.
+    </p>
+
+    <!-- 4. BOTÃO VERDE (abre o popup) -->
+    <button type="button" id="open-modal" class="cta">QUERO ENTRAR NO DESAFIO GRÁTIS</button>
+
+    <!-- 5. PARA QUEM É -->
+    <section class="foryou" aria-label="Para quem é o desafio">
+      <div class="wrap">
+        <div class="foryou__head">
+          <span class="pill">Convocação</span>
+          <h2 class="foryou__title">Essa operação é <span class="g">pra você</span></h2>
+        </div>
+        <ul class="foryou__list">
+          <li>Se você quer a farda da <strong>PMPE</strong> e não sabe por onde começar a estudar.</li>
+          <li>Se você já tentou, não passou, e ficou com a sensação de que <strong>não é pra você</strong>.</li>
+          <li>Se você estuda todo dia, mas sente que está <strong>estudando errado</strong> e perdendo tempo.</li>
+          <li>Se você está sozinho nessa e precisa de <strong>direção de quem já passou</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. CRONOGRAMA DOS 5 DIAS -->
+    <section class="days" aria-label="Cronograma do desafio">
+      <div class="wrap">
+        <div class="days__head">
+          <span class="pill">Plano de operação</span>
+          <h2 class="days__title">O que acontece em <span class="g">cada um dos 5 dias</span></h2>
+          <p class="days__sub">Todas as lives às 12h12, dentro do grupo. Chegue no horário: quem chega atrasado perde a missão do dia.</p>
+        </div>
+
+        <ol class="days__grid">
+          <li class="dcard">
+            <div class="dcard__top"><span class="dcard__n">Dia 1</span><span class="dcard__date">24/07 · sexta</span></div>
+            <h3>Apresentação + a história por trás da farda</h3>
+            <p>Everton conta a própria história — de quem duvidou a quem foi aprovado 15 vezes. Você vai entender por que isso também é possível pra você.</p>
+          </li>
+          <li class="dcard">
+            <div class="dcard__top"><span class="dcard__n">Dia 2</span><span class="dcard__date">25/07 · sábado</span></div>
+            <h3>Diagnóstico com IA: descubra seu nível real</h3>
+            <p>Um diagnóstico rápido com inteligência artificial para mostrar exatamente onde você está — e uma prévia da nossa plataforma de estudos.</p>
+          </li>
+          <li class="dcard">
+            <div class="dcard__top"><span class="dcard__n">Dia 3</span><span class="dcard__date">26/07 · domingo</span></div>
+            <h3>Análise ao vivo dos diagnósticos</h3>
+            <p>O professor analisa diagnósticos reais de participantes ao vivo e mostra o que cada resultado significa na hora de montar o estudo.</p>
+          </li>
+          <li class="dcard">
+            <div class="dcard__top"><span class="dcard__n">Dia 4</span><span class="dcard__date">27/07 · segunda</span></div>
+            <h3>MDT: o método de resolução aplicado</h3>
+            <p>A aplicação prática do MDT para você parar de se afogar em conteúdo e começar a resolver questão com método. E um gancho do que vem no Dia 5.</p>
+          </li>
+          <li class="dcard dcard--final">
+            <div class="dcard__top"><span class="dcard__n">Dia 5</span><span class="dcard__date">28/07 · terça</span></div>
+            <h3>Prova social + o seu próximo passo</h3>
+            <p>Depoimentos de quem já vestiu a farda, a ponte para o seu futuro e a apresentação da Mentoria CPPEM para quem decidir ir até o fim.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. SEÇÃO MENTOR -->
+    <section class="mentor" aria-label="Seu mentor">
+      <div class="wrap mentor__grid">
+        <div class="mentor__photo">
+          <img src="public/everton-mota.jpg" alt="Prof. Everton Mota" />
+          <div class="mentor__badge">
+            <strong>PROF. EVERTON MOTA</strong>
+            <span>COMANDANTE DA OPERAÇÃO · CPPEM</span>
+          </div>
+        </div>
+        <div class="mentor__content">
+          <span class="pill">Quem conduz o desafio</span>
+          <h2 class="mentor__title">Quem te orienta aqui <span class="g">já passou.</span></h2>
+          <p>
+            Aprovado em <strong>15 concursos públicos</strong>, o Prof. Everton Mota não ensina pelo livro.
+            Ensina pela estrada que ele mesmo caminhou. Há mais de 7 anos forma candidatos para carreiras
+            policiais no Nordeste, com mais de 14 mil aprovados.
+          </p>
+          <p>
+            Nesses <strong>5 dias de desafio</strong>, ele vai te mostrar ao vivo o que separa o aprovado do
+            eliminado na PMPE: o método. Sem enrolação, sem teoria solta — o caminho real, do jeito que
+            funciona pra quem trabalha, tem pouco tempo e já cansou de tentar sozinho.
+          </p>
+          <div class="mentor__divider"></div>
+          <div class="mentor__stats">
+            <div><b>15</b><span>Concursos aprovados</span></div>
+            <div><b>14K+</b><span>Alunos aprovados</span></div>
+            <div><b>7+</b><span>Anos de atuação</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SEÇÃO BENEFÍCIOS -->
+    <section class="benefits" aria-label="O que você leva do desafio">
+      <div class="wrap">
+        <div class="benefits__head">
+          <span class="pill">Munição do desafio</span>
+          <h2 class="benefits__title">O que você leva <span class="g">nesses 5 dias</span></h2>
+          <p class="benefits__sub">
+            Nada de live motivacional vazia. Você sai com diagnóstico, método e direção — de graça.
+          </p>
+        </div>
+
+        <div class="benefits__grid">
+          <article class="bcard">
+            <div class="bcard__icon">🎯</div>
+            <h3>Diagnóstico do seu nível</h3>
+            <p>Com apoio de IA, você descobre onde realmente está hoje — e para de estudar no escuro achando que está avançando.</p>
+          </article>
+          <article class="bcard">
+            <div class="bcard__icon">🧠</div>
+            <h3>O método MDT na prática</h3>
+            <p>A forma certa de resolver questão e fixar conteúdo, aplicada ao vivo com você, do zero.</p>
+          </article>
+          <article class="bcard">
+            <div class="bcard__icon">🛡️</div>
+            <h3>Foco total na PMPE</h3>
+            <p>Nada genérico: cinco dias falando da banca, do edital e da realidade de quem quer a farda em Pernambuco.</p>
+          </article>
+          <article class="bcard">
+            <div class="bcard__icon">🎥</div>
+            <h3>Lives com o professor ao vivo</h3>
+            <p>Você pergunta, ele responde. Direção de quem foi aprovado 15 vezes, sem intermediário.</p>
+          </article>
+          <article class="bcard">
+            <div class="bcard__icon">💻</div>
+            <h3>Prévia da plataforma CPPEM</h3>
+            <p>Acesso a uma prévia das telas e ferramentas que os nossos alunos usam todo dia para estudar.</p>
+          </article>
+          <article class="bcard">
+            <div class="bcard__icon">🔥</div>
+            <h3>Uma tropa com você</h3>
+            <p>Você deixa de estudar sozinho: entra num grupo com centenas de concurseiros na mesma missão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. PROVAS SOCIAIS — fotos dos alunos com o Prof. Everton Mota -->
+    <section class="social">
+      <div class="social__head">
+        <span class="pill">Resultados reais</span>
+        <h2 class="social__title">Alunos que já <span class="g">vestiram a farda</span></h2>
+        <p class="social__sub">Histórias reais de quem chegou onde você quer chegar com a metodologia do Prof. Everton.</p>
+      </div>
+
+      <!-- Carrossel infinito de fotos dos alunos (loop contínuo via CSS).
+           A 2ª sequência é uma cópia oculta de leitores de tela que garante
+           o loop perfeito. Pausa ao passar o mouse e respeita reduced-motion. -->
+      <div class="carousel" aria-label="Fotos de alunos com o Prof. Everton Mota">
+        <ul class="carousel__track">
+          <li class="carousel__item"><img src="public/foto1.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto2.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto3.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto4.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto5.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto6.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto7.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto8.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto9.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto10.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto11.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto12.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto13.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <li class="carousel__item"><img src="public/foto14.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="Aluno com o Prof. Everton Mota" /></li>
+          <!-- cópia para o loop infinito -->
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto1.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto2.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto3.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto4.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto5.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto6.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto7.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto8.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto9.webp"  width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto10.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto11.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto12.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto13.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+          <li class="carousel__item" aria-hidden="true"><img src="public/foto14.webp" width="320" height="400" loading="lazy" fetchpriority="low" decoding="async" draggable="false" alt="" /></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. FAQ — dúvidas frequentes (acordeão nativo, sem JS) -->
+    <section class="faq" aria-label="Dúvidas frequentes">
+      <div class="wrap">
+        <div class="faq__head">
+          <span class="pill">Dúvidas frequentes</span>
+          <h2 class="faq__title">Perguntas <span class="g">e respostas</span></h2>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>O desafio é realmente gratuito?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>É 100% gratuito. Você só precisa se inscrever e entrar no grupo para receber os avisos e o link das lives. Não é cobrado nada para participar dos 5 dias.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Onde e a que horas acontecem as lives?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>De 24 a 28 de julho, sempre às 12h12. Todos os avisos e o link de cada live são enviados no grupo exclusivo do desafio — por isso a inscrição é obrigatória.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Se eu perder uma live, fica gravada?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>As lives ficam disponíveis por tempo limitado. Quem assiste ao vivo participa do diagnóstico, tira dúvidas com o professor e aproveita muito mais — priorize estar presente.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Preciso já estar estudando para participar?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Não. O desafio foi feito tanto para quem está começando do zero quanto para quem já tentou, não passou e quer entender o que está fazendo errado.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>É só para quem quer a PMPE?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>O foco é a PMPE. Mas o método de estudo e a base construída servem para qualquer carreira policial — PM, PC, PRF, PF e Penal.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>Vão me vender alguma coisa?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>No Dia 5 apresentamos a Mentoria CPPEM para quem quiser continuar com acompanhamento. Mas os 5 dias de conteúdo são entregues por completo, comprando você algo ou não.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. CHAMADA FINAL -->
+    <section class="final" aria-label="Última chamada">
+      <div class="wrap final__inner">
+        <h2 class="final__title">Você pode tentar de novo sozinho.<br /><span class="g">Ou entrar na operação.</span></h2>
+        <p class="final__text">
+          São 5 dias. É de graça. E pode ser a diferença entre mais um ano estudando errado
+          e o ano em que você finalmente veste a farda.
+        </p>
+        <button type="button" class="cta" data-open-modal>GARANTIR MINHA VAGA NO DESAFIO</button>
+        <p class="final__note">Início dia 24/07, às 12h12 · Vagas limitadas no grupo</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <img class="site-footer__logo" src="public/logo-cppem.png" alt="CPPEM Concursos Públicos" />
+      <p class="site-footer__quote">"Seu sonho é o nosso principal objetivo."</p>
+      <button type="button" class="site-footer__support" data-open-modal>Suporte via WhatsApp</button>
+      <p class="site-footer__copy">© 2026 CPPEM Concursos · Caruaru, Pernambuco · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- ===== POPUP / MODAL DE CAPTURA ===== -->
+  <div class="modal" id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__card">
+      <button type="button" class="modal__close" data-close aria-label="Fechar">&times;</button>
+      <h2 class="modal__title" id="modal-title">Falta só um passo!</h2>
+      <p class="modal__text">
+        Preencha seus dados abaixo e você será levado direto para o grupo do desafio no WhatsApp.
+      </p>
+
+      <form class="form" id="lead-form" novalidate>
+        <div class="field">
+          <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Nome completo" required />
+          <span class="error" data-error-for="nome"></span>
+        </div>
+        <div class="field">
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="E-mail" required />
+          <span class="error" data-error-for="email"></span>
+        </div>
+        <div class="field">
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="WhatsApp com DDD — ex: (81) 99999-9999" required />
+          <span class="error" data-error-for="telefone"></span>
+        </div>
+
+        <button type="submit" id="IPEyzyfmJhKQEYIXAlZH" class="cta">ENTRAR NO GRUPO DO DESAFIO</button>
+        <p class="note">Seus dados estão seguros. Redirecionamento imediato.</p>
+        <p class="success" id="form-success" role="status" hidden>
+          ✅ Inscrição recebida!<br />
+          Você está sendo redirecionado para o WhatsApp.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://sgtm.cppem.com.br/metrics/ns.html?id=GTM-PJ379FLQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <script src="script.js"></script>
+</body>
+</html>
